@@ -35,7 +35,6 @@ namespace Fiver.Mvc.ModelValidation.Models.Home
         
         public bool IsPartTime { get; set; }
 
-        [Required]
         public AddressInputModel Address { get; set; }
        
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
