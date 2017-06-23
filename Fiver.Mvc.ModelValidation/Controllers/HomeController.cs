@@ -13,6 +13,10 @@ namespace Fiver.Mvc.ModelValidation.Controllers
         [HttpPost]
         public IActionResult Save(EmployeeInputModel model)
         {
+            // simulate DB call to check existence of Id
+            if (model.Id == 1)
+                ModelState.AddModelError("Id", "Id already exist");
+
             if (ModelState.IsValid)
                 return Ok(model);
             

@@ -37,10 +37,13 @@ namespace Fiver.Mvc.ModelValidation.Models.Home
 
         public AddressInputModel Address { get; set; }
        
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        public IEnumerable<ValidationResult> Validate(
+            ValidationContext validationContext)
         {
-            if (!string.IsNullOrEmpty(BlogUrl) && BlogUrl.Contains("tahir-naushad.com"))
-                yield return new ValidationResult("URL already taken", new[] { "BlogUrl" });
+            if (!string.IsNullOrEmpty(BlogUrl) && 
+                    BlogUrl.Contains("tahir-naushad.com"))
+                yield return new ValidationResult(
+                    "URL already taken", new[] { "BlogUrl" });
         }
     }
 
